@@ -1,3 +1,10 @@
+/*
+JARED EVANS DSD 2208
+
+CS105_ASSESSMENT_2 SECTION_1 Question 1 Pointer to Objects
+*/
+
+
 #pragma once
 #include <iostream>
 #include <string>

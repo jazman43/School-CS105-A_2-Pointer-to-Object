@@ -1,4 +1,13 @@
+/*
+JARED EVANS DSD 2208
+
+CS105_ASSESSMENT_2 SECTION_1 Question 1 Pointer to Objects
+*/
+
+
 #include <iostream>
+#include <string>
+
 #include "HealthActivity.h"
 
 //function for setting user Data
@@ -20,7 +29,6 @@ int main()
 	getUserData(ptrActivities, size);
 
 	
-
 	system("pause>0");
 	return 0;
 }
@@ -36,6 +44,17 @@ void setUserData(HealthActivity* activities, int size)
 		std::cout << "Enter name, steps, and walking + running distance for user " << i + 1 << ":\n";
 		//gets that input and stores the into ver and then into the setters
 		std::cin >> name >> steps >> walkingRunning;
+		if(std::cin.fail())
+		{
+			std::cin.clear();
+			std::cin.ignore(std::numeric_limits<std::streamsize>::max(),'\n');
+			std::cout << "Invaild user input steps and walking + running distance must be numbers\n\n";
+			i--;
+			continue;
+		}
+
+
+
 		activities[i].setName(name);
 		activities[i].setSteps(steps);
 		activities[i].setWalkingRunning(walkingRunning);
